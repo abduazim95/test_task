@@ -8,11 +8,30 @@ import Home from '@/views/Home.vue';
 Vue.use(VueRouter)
 
 const routes = [
-    { path: '/messages', component: Messages },
-    { path: '/login', component: Login },
-    { path: '/', component: Home }
+    { 
+        path: '/messages', 
+        component: Messages,
+        meta: { rule: 'authenticated' }
+    },
+    { 
+        path: '/login', 
+        component: Login,
+        meta: { rule: 'anybody' }
+    },
+    { 
+        path: '/', 
+        component: Home,
+        meta: { rule: 'anybody' }
+    }
 ]
 
-export default new VueRouter({
+const router = new VueRouter({
     routes
 })
+
+router.beforeEach((to, from, next) => {
+    if (true && to.meta.rule == 'authenticated') next('/login')
+    else next()
+})
+
+export default router;
