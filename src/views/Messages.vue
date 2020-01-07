@@ -21,7 +21,7 @@
 					<td>{{message.title}}</td>
 					<td>{{message.createdAt}}</td>
 					<td>
-						<button type="button" class="btn btn-danger">Удалить</button>
+						<button @click="removeItem(message)" type="button" class="btn btn-danger">Удалить</button>
 					</td>
 				</tr>
 			</tbody>
@@ -53,6 +53,9 @@ export default {
 				return;
 			}
 			this.messages = resp.data;
+		},
+		removeItem(message) {
+			this.messages = this.messages.filter(item => item != message);
 		}
 	},
 	created() {
