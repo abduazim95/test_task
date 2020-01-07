@@ -3,6 +3,7 @@
 import 'bootstrap';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Vue from 'vue';
+import router from './router';
 import App from './App';
 
 /* eslint-disable no-new */
@@ -10,4 +11,5 @@ new Vue({
   el: '#app',
   template: '<App/>',
   components: { App },
+  router
 });
