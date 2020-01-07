@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '@/store';
 
 import Messages from '@/views/Messages.vue';
 import Login from '@/views/Login.vue';
@@ -30,7 +31,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    if (true && to.meta.rule == 'authenticated') next('/login')
+    if (!store.getters.user.authenticated && to.meta.rule == 'authenticated') next('/login')
     else next()
 })
 

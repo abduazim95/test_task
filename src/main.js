@@ -5,11 +5,13 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Vue from 'vue';
 import router from './router';
 import App from './App';
+import store from './store';
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   template: '<App/>',
   components: { App },
-  router
+  router,
+  store
 });

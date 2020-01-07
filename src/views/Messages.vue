@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div id="messages" class="container">
 		<table class="table">
 			<thead class="thead-light">
 				<tr>
@@ -8,6 +8,7 @@
 					<th scope="col">Title</th>
 					<th scope="col">Text</th>
 					<th scope="col">Created at</th>
+					<th scope="col">Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -19,6 +20,9 @@
 					<td>{{message.text}}</td>
 					<td>{{message.title}}</td>
 					<td>{{message.createdAt}}</td>
+					<td>
+						<button type="button" class="btn btn-danger">Удалить</button>
+					</td>
 				</tr>
 			</tbody>
 		</table>

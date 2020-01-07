@@ -7,7 +7,7 @@
             </p>
 			<hr class="my-4" />
 			<p>Администрация делает всё, чтобы Вам было у нас комфортно и уютно.</p>
-			<a class="btn btn-primary btn-lg" href="#" role="button">Начать</a>
+			<router-link to="/messages" class="btn btn-primary btn-lg" href="#" role="button">Начать</router-link>
 		</div>
 	</div>
 </template>
