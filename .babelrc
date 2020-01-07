@@ -1,6 +1,15 @@
 {
   "presets": ["es2015", "stage-2"],
-  "plugins": ["transform-runtime"],
+  "plugins": [
+    ["transform-runtime"],
+    [
+      "babel-plugin-root-import",
+      {
+        "rootPathSuffix": "./src/",
+        "rootPathPrefix": "@/"
+      }
+    ]
+  ],
   "comments": false,
   "env": {
     "test": {
