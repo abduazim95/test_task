@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<div class="jumbotron">
-			<h1 class="display-4">Приветствуем Вас, дорогой гость!</h1>
+			<h1 class="display-4">Приветствуем Вас, дорогой {{$store.getters.user.authenticated ? 'пользователь' : 'гость'}}!</h1>
 			<p class="lead">
                 Наслажлайтесь, читайте! Наш ДОМ ждет ВАС!
             </p>
@@ -11,10 +11,3 @@
 		</div>
 	</div>
 </template>
-<script>
-export default {
-	data() {
-		return {};
-	}
-};
-</script>
